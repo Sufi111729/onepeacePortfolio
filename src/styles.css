@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background: #070707;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: #070707;
+    color: #f8fafc;
+    font-family: Inter, ui-sans-serif, system-ui, Segoe UI, sans-serif;
+  }
+
+  ::selection {
+    background: #e11d2e;
+    color: #f8fafc;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ink;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline,
+  .btn-small {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 px-5 py-3 text-sm font-bold uppercase tracking-[0.12em] transition;
+  }
+
+  .btn-primary {
+    @apply border border-accent bg-accent text-white hover:bg-transparent hover:text-accent;
+  }
+
+  .btn-secondary {
+    @apply border border-line bg-surface text-text hover:border-accent hover:text-accent;
+  }
+
+  .btn-outline {
+    @apply border border-accent/80 bg-transparent px-4 py-2 text-accent hover:bg-accent hover:text-white;
+  }
+
+  .btn-small {
+    @apply min-h-10 border border-line bg-ink px-3 py-2 normal-case tracking-normal text-muted hover:border-accent hover:text-text;
+  }
+
+  .btn-small-accent {
+    @apply border-accent/70 text-accent hover:bg-accent hover:text-white;
+  }
+
+  .hero-wallpaper-bg {
+    @apply absolute inset-0 bg-cover bg-no-repeat;
+    background-position: 58% center;
+    opacity: 0.58;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-wallpaper-bg {
+      left: 42%;
+      background-position: center;
+      opacity: 0.9;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 100%);
+      mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 100%);
+    }
+  }
+
+  .stat-card {
+    @apply border border-line bg-surface/95 p-4 shadow-clean transition-colors hover:border-accent/60;
+  }
+
+  .stat-card strong {
+    @apply mt-3 block text-base font-extrabold text-text;
+  }
+
+  .stat-card span:last-child {
+    @apply mt-1 block text-xs font-semibold leading-5 text-muted;
+  }
+
+  .stat-icon {
+    @apply flex h-10 w-10 items-center justify-center border border-accent/60 text-accent;
+  }
+
+  .skill-card {
+    @apply flex min-h-14 items-center gap-3 border border-line bg-ink px-4 py-3 text-sm font-semibold text-text transition hover:-translate-y-1 hover:border-accent/65;
+  }
+
+  .project-card {
+    @apply overflow-hidden border border-line bg-surface shadow-clean transition-colors hover:border-accent/70;
+    transform-style: preserve-3d;
+  }
+
+  .project-card::before {
+    content: '';
+    @apply block h-1 w-0 bg-accent transition-all duration-300;
+  }
+
+  .project-card:hover::before {
+    @apply w-full;
+  }
+
+  .project-thumb {
+    @apply relative m-4 mb-0 block aspect-video overflow-hidden border border-line bg-ink;
+  }
+
+  .project-thumb img {
+    @apply h-full w-full object-cover transition duration-500 ease-out;
+  }
+
+  .project-card:hover .project-thumb img {
+    @apply scale-105;
+  }
+
+  .project-thumb-overlay {
+    @apply pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(7,7,7,0.04)_0%,rgba(7,7,7,0.48)_100%),linear-gradient(90deg,rgba(225,29,46,0.22),transparent_42%)];
+  }
+
+  .project-thumb-fallback {
+    @apply flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_25%_20%,rgba(225,29,46,0.26),transparent_30%),linear-gradient(135deg,#151619,#070707_68%)];
+  }
+
+  .project-thumb-fallback span {
+    @apply border border-accent/60 px-4 py-2 text-sm font-bold uppercase tracking-[0.16em] text-text;
+  }
+
+  .contact-row {
+    @apply flex items-center gap-4 border border-line bg-surface p-4 transition hover:border-accent/55;
+  }
+
+  .form-field {
+    @apply grid gap-2;
+  }
+
+  .form-field span {
+    @apply text-sm font-bold text-text;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    @apply w-full border border-line bg-ink px-4 py-3 text-base text-text outline-none transition placeholder:text-muted/55 focus:border-accent;
+  }
+}
