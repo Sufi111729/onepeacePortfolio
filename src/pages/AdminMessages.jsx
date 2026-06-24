@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FiLogOut, FiMail, FiRefreshCw } from 'react-icons/fi';
 import { supabase } from '../lib/supabase';
-
-function navigateTo(path) {
-  window.history.pushState({}, '', path);
-  window.dispatchEvent(new PopStateEvent('popstate'));
-}
 
 function formatDate(value) {
   if (!value) return 'Unknown';
@@ -17,7 +13,7 @@ function formatDate(value) {
 }
 
 export default function AdminMessages() {
-  const [authChecked, setAuthChecked] = useState(false);
+  const navigate = useNavigate();
   const [adminEmail, setAdminEmail] = useState('');
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -48,13 +44,7 @@ export default function AdminMessages() {
     supabase.auth.getSession().then(({ data }) => {
       if (!active) return;
 
-      if (!data.session) {
-        navigateTo('/admin/login');
-        return;
-      }
-
-      setAdminEmail(data.session.user.email || '');
-      setAuthChecked(true);
+      setAdminEmail(data.session?.user?.email || '');
       fetchMessages();
     });
 
@@ -65,17 +55,7 @@ export default function AdminMessages() {
 
   async function handleLogout() {
     await supabase.auth.signOut();
-    navigateTo('/admin/login');
-  }
-
-  if (!authChecked) {
-    return (
-      <main className="flex min-h-screen items-center justify-center bg-ink px-5 text-text">
-        <p className="border border-line bg-surface px-5 py-4 text-sm font-semibold text-muted">
-          Checking admin session...
-        </p>
-      </main>
-    );
+    navigate('/admin/login', { replace: true });
   }
 
   return (
@@ -107,9 +87,11 @@ export default function AdminMessages() {
         </div>
 
         {loading && (
-          <p className="mt-8 border border-line bg-surface px-5 py-4 text-sm font-semibold text-muted">
-            Loading messages...
-          </p>
+          <div className="mt-8 grid gap-3 border border-line bg-surface p-5" aria-label="Loading messages">
+            <span className="h-4 w-40 animate-pulse bg-muted/20" />
+            <span className="h-4 w-full animate-pulse bg-muted/15" />
+            <span className="h-4 w-3/4 animate-pulse bg-muted/15" />
+          </div>
         )}
 
         {errorMessage && (
