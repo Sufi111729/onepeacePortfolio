@@ -1,10 +1,9 @@
 import React from 'react';
-import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { FiGithub, FiMail } from 'react-icons/fi';
 
 const socials = [
-  { icon: FiGithub, label: 'GitHub', href: 'https://github.com/Sufi111729' },
-  { icon: FiLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/' },
-  { icon: FiMail, label: 'Email', href: 'mailto:sufi111729@gmail.com' },
+  { icon: FiGithub, label: 'GitHub profile for Muhammad Sufiyan', href: 'https://github.com/Sufi111729' },
+  { icon: FiMail, label: 'Email Muhammad Sufiyan', href: 'mailto:sufi111729@gmail.com' },
 ];
 
 export default function Footer() {
@@ -20,7 +19,7 @@ export default function Footer() {
                 key={item.label}
                 href={item.href}
                 target={item.href.startsWith('http') ? '_blank' : undefined}
-                rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className="flex h-11 w-11 items-center justify-center border border-line text-muted transition hover:border-accent hover:text-accent focus-ring"
                 aria-label={item.label}
               >

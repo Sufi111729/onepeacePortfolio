@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FiArrowLeft, FiEye, FiEyeOff, FiLock, FiLogIn } from 'react-icons/fi';
 import { supabase } from '../lib/supabase';
+import RouteMeta from '../components/RouteMeta.jsx';
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -52,6 +53,7 @@ export default function AdminLogin() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-ink px-5 py-12 text-text sm:px-6 lg:px-8">
+      <RouteMeta robots="noindex, nofollow" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(225,29,46,0.13),transparent_32%),linear-gradient(180deg,rgba(17,18,20,0.32),transparent_46%)]" />
       <section className="relative mx-auto flex min-h-[calc(100vh-6rem)] max-w-md items-center">
         <form

@@ -70,18 +70,95 @@
   }
 
   .hero-wallpaper-bg {
-    @apply absolute inset-0 bg-cover bg-no-repeat;
-    background-position: 58% center;
+    @apply absolute inset-0 block overflow-hidden;
     opacity: 0.58;
+  }
+
+  .hero-wallpaper-bg img {
+    @apply h-full w-full object-cover;
+    object-position: 58% center;
   }
 
   @media (min-width: 1024px) {
     .hero-wallpaper-bg {
       left: 42%;
-      background-position: center;
       opacity: 0.9;
       -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 100%);
       mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 100%);
+    }
+
+    .hero-wallpaper-bg img {
+      object-position: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #home {
+      min-height: 650px;
+      padding-bottom: 3.25rem;
+      padding-top: 6rem;
+    }
+
+    #home .hero-wallpaper-bg {
+      inset: 0;
+      width: auto;
+      height: auto;
+      overflow: hidden;
+      background-image: var(--hero-mobile-image);
+      background-position: 72% top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.7;
+      z-index: 0;
+    }
+
+    #home .hero-wallpaper-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 76% 22%, rgba(225, 29, 46, 0.22), rgba(225, 29, 46, 0.08) 30%, transparent 58%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    #home .hero-wallpaper-bg img {
+      display: none;
+    }
+
+    #home .hero-mobile-overlay {
+      background:
+        linear-gradient(90deg, rgba(7, 7, 7, 0.82) 0%, rgba(7, 7, 7, 0.62) 48%, rgba(7, 7, 7, 0.16) 100%),
+        linear-gradient(180deg, rgba(7, 7, 7, 0.12) 0%, rgba(7, 7, 7, 0.2) 62%, rgba(7, 7, 7, 0.52) 100%);
+    }
+
+    #home .hero-title {
+      max-width: 62%;
+      font-size: clamp(2.65rem, 10.4vw, 3.55rem);
+      line-height: 0.9;
+    }
+
+    #home .hero-title-im {
+      font-size: clamp(2.15rem, 8.8vw, 2.9rem);
+      line-height: 0.88;
+    }
+  }
+
+  @media (max-width: 375px) {
+    #home {
+      min-height: 620px;
+    }
+
+    #home .hero-wallpaper-bg {
+      background-position: 86% top;
+    }
+
+    #home .hero-title {
+      max-width: 62%;
+      font-size: clamp(2.35rem, 10vw, 3rem);
+    }
+
+    #home .hero-title-im {
+      font-size: clamp(1.95rem, 8.6vw, 2.45rem);
     }
   }
 

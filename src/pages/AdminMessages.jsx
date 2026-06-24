@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiLogOut, FiMail, FiRefreshCw } from 'react-icons/fi';
 import { supabase } from '../lib/supabase';
+import RouteMeta from '../components/RouteMeta.jsx';
 
 function formatDate(value) {
   if (!value) return 'Unknown';
@@ -60,6 +61,7 @@ export default function AdminMessages() {
 
   return (
     <main className="min-h-screen bg-ink px-5 py-10 text-text sm:px-6 lg:px-8">
+      <RouteMeta robots="noindex, nofollow" />
       <section className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-5 border-b border-line pb-6 sm:flex-row sm:items-end sm:justify-between">
           <div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
+import logo from '../assets/mdsufidev-logo.webp';
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -32,12 +33,17 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line/80 bg-ink/88 backdrop-blur-md">
-      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
-        <a href="#home" className="group min-w-0 focus-ring">
-          <span className="block truncate text-base font-bold text-text">Muhammad Sufiyan</span>
-          <span className="block truncate text-xs font-medium uppercase tracking-[0.18em] text-muted group-hover:text-accent">
-            Java Full Stack Developer
-          </span>
+      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
+        <a href="#home" className="group flex min-w-0 items-center focus-ring" aria-label="Muhammad Sufiyan home">
+          <img
+            src={logo}
+            alt="MD Sufi developer portfolio logo"
+            width="84"
+            height="84"
+            className="h-20 w-20 shrink-0 object-contain"
+            loading="eager"
+            decoding="async"
+          />
         </a>
 
         <div className="hidden items-center gap-8 lg:flex">

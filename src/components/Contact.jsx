@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { FiGithub, FiLinkedin, FiMail, FiMapPin, FiSend } from 'react-icons/fi';
+import { FiGithub, FiMail, FiMapPin, FiSend } from 'react-icons/fi';
 import { supabase } from '../lib/supabase';
 import Section from './Section.jsx';
 
 const contacts = [
   { icon: FiMail, label: 'Email', value: 'sufi111729@gmail.com', href: 'mailto:sufi111729@gmail.com' },
   { icon: FiGithub, label: 'GitHub', value: 'github.com/Sufi111729', href: 'https://github.com/Sufi111729' },
-  { icon: FiMapPin, label: 'Location', value: 'Kushinagar, Uttar Pradesh, India' },
-  { icon: FiLinkedin, label: 'LinkedIn', value: 'LinkedIn profile placeholder', href: 'https://www.linkedin.com/' },
+  { icon: FiMapPin, label: 'Location', value: 'New Delhi, India' },
 ];
 
 export default function Contact() {
@@ -69,11 +68,11 @@ export default function Contact() {
   }
 
   return (
-    <Section id="contact" eyebrow="Contact me" title="Let's Build Something Great" className="bg-ink">
+    <Section id="contact" eyebrow="Contact me" title="Contact Muhammad Sufiyan" className="bg-ink">
       <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <p className="max-w-2xl text-base leading-8 text-muted sm:text-lg">
-            I am open to Java Full Stack Developer opportunities, internships, freelance projects,
+            Muhammad Sufiyan is open to Java Full Stack Developer opportunities, internships, freelance projects,
             and collaborations. Feel free to reach out for a project, job opportunity, or technical
             discussion.
           </p>

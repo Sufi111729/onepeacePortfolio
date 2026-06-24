@@ -55,7 +55,7 @@ const categories = [
 
 export default function Skills() {
   return (
-    <Section id="skills" eyebrow="Technical toolkit" title="Skills & Arsenal" className="bg-ink">
+    <Section id="skills" eyebrow="Technical toolkit" title="Java Full Stack Development Skills" className="bg-ink">
       <div className="grid gap-5 lg:grid-cols-3">
         {categories.map((category) => {
           const CategoryIcon = category.icon;

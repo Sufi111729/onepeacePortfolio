@@ -8,7 +8,8 @@ const projects = [
     title: 'FileWalaTool',
     description:
       'A practical online platform for PDF, image, and document utilities. It includes tools for image compression, image resizing, PDF merge, split, compress, image to PDF, PDF to JPG, passport photo creation, background removal, and more.',
-    image: '/projects/filewalatool.webp',
+    image: '/projects/filewalatool-pdf-image-tools-project.webp',
+    imageAlt: 'FileWalaTool PDF and image tools web application project',
     technologies: ['React', 'Vite', 'Tailwind CSS', 'JavaScript'],
     github: 'PASTE_FILEWALATOOL_GITHUB_REPO_LINK_HERE',
     live: 'https://www.filewalatool.com/',
@@ -17,7 +18,8 @@ const projects = [
     title: 'MangaLok',
     description:
       'A manga reading web application designed with a smooth catalog experience, chapter reading flow, user-friendly interface, and backend-based content management.',
-    image: '/projects/mangalok.webp',
+    image: '/projects/mangalok-manga-reading-web-app.webp',
+    imageAlt: 'MangaLok manga reading web application project',
     technologies: ['React', 'Spring Boot', 'MySQL'],
     github: 'PASTE_MANGALOK_GITHUB_REPO_LINK_HERE',
     live: 'PASTE_MANGALOK_LIVE_DEMO_LINK_HERE',
@@ -26,7 +28,8 @@ const projects = [
     title: 'Resume Builder',
     description:
       'An ATS-friendly resume builder that helps users create professional resumes with a clean interface and downloadable resume output.',
-    image: '/projects/resume-builder.webp',
+    image: '/projects/resume-builder-react-project.webp',
+    imageAlt: 'ATS-friendly resume builder web application project',
     technologies: ['React', 'JavaScript', 'PDF Export'],
     github: 'PASTE_RESUME_BUILDER_GITHUB_REPO_LINK_HERE',
     live: 'PASTE_RESUME_BUILDER_LIVE_DEMO_LINK_HERE',
@@ -50,7 +53,10 @@ function ProjectThumbnail({ project }) {
     >
       <img
         src={project.image}
-        alt={`${project.title} project preview`}
+        alt={project.imageAlt}
+        width="1280"
+        height="720"
+        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
         loading="lazy"
         decoding="async"
         onError={(event) => {
@@ -70,7 +76,7 @@ export default function Projects() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <Section id="projects" eyebrow="Practical builds" title="Selected Projects" className="bg-[#090909]">
+    <Section id="projects" eyebrow="Practical builds" title="Featured Projects" className="bg-[#090909]">
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <motion.article

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://mdsufidev.vercel.app/</loc>
+    <image:image>
+      <image:loc>https://mdsufidev.vercel.app/muhammad-sufiyan-java-full-stack-developer-hero.webp</image:loc>
+      <image:title>Muhammad Sufiyan Java Full Stack Developer portrait</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mdsufidev.vercel.app/og-muhammad-sufiyan-java-full-stack-developer.jpg</image:loc>
+      <image:title>Muhammad Sufiyan Java Full Stack Developer portfolio preview</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mdsufidev.vercel.app/projects/filewalatool-pdf-image-tools-project.webp</image:loc>
+      <image:title>FileWalaTool PDF and image tools web application project</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mdsufidev.vercel.app/projects/mangalok-manga-reading-web-app.webp</image:loc>
+      <image:title>MangaLok manga reading web application project</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mdsufidev.vercel.app/projects/resume-builder-react-project.webp</image:loc>
+      <image:title>ATS-friendly resume builder web application project</image:title>
+    </image:image>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
