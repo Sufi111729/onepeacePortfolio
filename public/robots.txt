@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://mdsufidev.vercel.app/sitemap.xml

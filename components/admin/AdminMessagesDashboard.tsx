@@ -1,26 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+'use client';
+
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import { FiLogOut, FiMail, FiRefreshCw } from 'react-icons/fi';
-import { supabase } from '../lib/supabase';
-import RouteMeta from '../components/RouteMeta.jsx';
+import { supabase } from '@/lib/supabase';
 
-function formatDate(value) {
+type ContactMessage = {
+  id: string;
+  full_name: string;
+  email: string;
+  message: string;
+  created_at: string | null;
+};
+
+function formatDate(value: string | null) {
   if (!value) return 'Unknown';
-
   return new Intl.DateTimeFormat('en-IN', {
     dateStyle: 'medium',
     timeStyle: 'short',
   }).format(new Date(value));
 }
 
-export default function AdminMessages() {
-  const navigate = useNavigate();
+export function AdminMessagesDashboard() {
+  const router = useRouter();
   const [adminEmail, setAdminEmail] = useState('');
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<ContactMessage[]>([]);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
   async function fetchMessages() {
+    if (!supabase) {
+      setErrorMessage('Missing Supabase environment variables.');
+      return;
+    }
+
     setLoading(true);
     setErrorMessage('');
 
@@ -36,15 +49,15 @@ export default function AdminMessages() {
       return;
     }
 
-    setMessages(data || []);
+    setMessages((data || []) as ContactMessage[]);
   }
 
   useEffect(() => {
     let active = true;
+    if (!supabase) return;
 
     supabase.auth.getSession().then(({ data }) => {
       if (!active) return;
-
       setAdminEmail(data.session?.user?.email || '');
       fetchMessages();
     });
@@ -55,26 +68,23 @@ export default function AdminMessages() {
   }, []);
 
   async function handleLogout() {
-    await supabase.auth.signOut();
-    navigate('/admin/login', { replace: true });
+    if (supabase) await supabase.auth.signOut();
+    router.replace('/admin/login');
   }
 
   return (
     <main className="min-h-screen bg-ink px-5 py-10 text-text sm:px-6 lg:px-8">
-      <RouteMeta robots="noindex, nofollow" />
       <section className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-5 border-b border-line pb-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-accent">Admin Dashboard</p>
             <h1 className="font-display text-4xl uppercase leading-none text-text sm:text-5xl">Contact Messages</h1>
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
-              Latest portfolio contact submissions from Supabase.
-            </p>
-            {adminEmail && (
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">Latest portfolio contact submissions from Supabase.</p>
+            {adminEmail ? (
               <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted">
                 Signed in as <span className="text-accent">{adminEmail}</span>
               </p>
-            )}
+            ) : null}
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <button type="button" className="btn-secondary focus-ring" onClick={fetchMessages} disabled={loading}>
@@ -88,30 +98,30 @@ export default function AdminMessages() {
           </div>
         </div>
 
-        {loading && (
+        {loading ? (
           <div className="mt-8 grid gap-3 border border-line bg-surface p-5" aria-label="Loading messages">
             <span className="h-4 w-40 animate-pulse bg-muted/20" />
             <span className="h-4 w-full animate-pulse bg-muted/15" />
             <span className="h-4 w-3/4 animate-pulse bg-muted/15" />
           </div>
-        )}
+        ) : null}
 
-        {errorMessage && (
+        {errorMessage ? (
           <p className="mt-8 border border-accent/60 bg-accent/10 px-5 py-4 text-sm font-semibold text-red-200" role="alert">
             {errorMessage}
           </p>
-        )}
+        ) : null}
 
-        {!loading && !errorMessage && messages.length === 0 && (
+        {!loading && !errorMessage && messages.length === 0 ? (
           <div className="mt-8 flex min-h-64 items-center justify-center border border-line bg-surface p-8 text-center">
             <div>
               <FiMail aria-hidden="true" className="mx-auto mb-4 text-accent" size={32} />
               <p className="text-lg font-bold text-text">No contact messages yet.</p>
             </div>
           </div>
-        )}
+        ) : null}
 
-        {!loading && !errorMessage && messages.length > 0 && (
+        {!loading && !errorMessage && messages.length > 0 ? (
           <>
             <div className="mt-8 hidden overflow-hidden border border-line bg-surface lg:block">
               <table className="w-full border-collapse text-left">
@@ -146,14 +156,12 @@ export default function AdminMessages() {
                     </a>
                   </div>
                   <p className="mt-4 leading-7 text-muted">{item.message}</p>
-                  <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted">
-                    {formatDate(item.created_at)}
-                  </p>
+                  <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted">{formatDate(item.created_at)}</p>
                 </article>
               ))}
             </div>
           </>
-        )}
+        ) : null}
       </section>
     </main>
   );

@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background: #070707;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: #070707;
+    color: #f8fafc;
+  }
+
+  ::selection {
+    background: #e11d2e;
+    color: #f8fafc;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ink;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline,
+  .btn-small {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 px-5 py-3 text-center text-sm font-bold uppercase tracking-[0.1em] transition;
+  }
+
+  .btn-primary {
+    @apply border border-accent bg-accent text-white hover:bg-transparent hover:text-accent;
+  }
+
+  .btn-secondary {
+    @apply border border-line bg-surface text-text hover:border-accent hover:text-accent;
+  }
+
+  .btn-outline {
+    @apply border border-accent/80 bg-transparent px-4 py-2 text-accent hover:bg-accent hover:text-white;
+  }
+
+  .btn-small {
+    @apply min-h-10 border border-line bg-ink px-3 py-2 normal-case leading-5 tracking-normal text-muted hover:border-accent hover:text-text;
+  }
+
+  .btn-small-accent {
+    @apply border-accent/70 text-accent hover:bg-accent hover:text-white;
+  }
+
+  .hero-wallpaper-bg {
+    @apply absolute inset-0 block overflow-hidden;
+    opacity: 0.54;
+  }
+
+  .hero-wallpaper-bg img {
+    object-position: 58% center;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-wallpaper-bg {
+      left: 42%;
+      opacity: 0.86;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 100%);
+      mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 100%);
+    }
+
+    .hero-wallpaper-bg img {
+      object-position: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #home {
+      min-height: 720px;
+      padding-bottom: 3.75rem;
+      padding-top: 6rem;
+    }
+
+    #home .hero-wallpaper-bg {
+      inset: 0;
+      background-image: url('/muhammad-sufiyan-java-full-stack-developer-mobile-hero.webp');
+      background-position: 72% top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.7;
+      z-index: 0;
+    }
+
+    #home .hero-wallpaper-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 76% 22%, rgba(225, 29, 46, 0.22), rgba(225, 29, 46, 0.08) 30%, transparent 58%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    #home .hero-wallpaper-bg img {
+      display: none;
+    }
+
+    #home .hero-mobile-overlay {
+      background:
+        linear-gradient(90deg, rgba(7, 7, 7, 0.82) 0%, rgba(7, 7, 7, 0.62) 48%, rgba(7, 7, 7, 0.16) 100%),
+        linear-gradient(180deg, rgba(7, 7, 7, 0.12) 0%, rgba(7, 7, 7, 0.2) 62%, rgba(7, 7, 7, 0.52) 100%);
+    }
+
+    #home .hero-title {
+      max-width: 88%;
+      font-size: clamp(2.55rem, 11.5vw, 3.75rem);
+      line-height: 0.92;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .btn-primary,
+    .btn-secondary {
+      @apply w-full px-4 text-xs;
+    }
+
+    #home .hero-title {
+      max-width: 92%;
+      font-size: clamp(2.3rem, 11vw, 3.25rem);
+    }
+  }
+
+  .stat-card {
+    @apply border border-line bg-surface/95 p-4 shadow-clean transition-colors hover:border-accent/60;
+  }
+
+  .stat-card strong {
+    @apply mt-3 block text-base font-extrabold text-text;
+  }
+
+  .stat-card span:last-child {
+    @apply mt-1 block text-xs font-semibold leading-5 text-muted;
+  }
+
+  .stat-icon {
+    @apply flex h-10 w-10 items-center justify-center border border-accent/60 text-accent;
+  }
+
+  .skill-core-card {
+    @apply h-auto self-start rounded-md border border-line/90 bg-surface p-6 shadow-clean transition duration-200 hover:-translate-y-1 hover:border-accent/45;
+  }
+
+  .skill-icon-box {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-sm border border-accent/45 bg-ink text-accent;
+  }
+
+  .skill-ai-panel {
+    @apply mt-6 rounded-md border border-line/90 bg-[#0b0c0e] p-6 shadow-clean sm:p-7 lg:p-8;
+  }
+
+  .skill-ai-badge {
+    @apply inline-flex border border-accent/45 bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-accent;
+  }
+
+  .skill-ai-group {
+    @apply self-start rounded-md border border-line bg-surface/80 p-5;
+  }
+
+  .skill-card {
+    @apply flex min-h-11 items-center gap-3 border border-line/90 bg-ink px-3.5 py-2.5 text-sm font-semibold leading-5 text-text transition-colors hover:border-accent/50 hover:bg-[#0c0c0c];
+  }
+
+  .ai-feature-card {
+    @apply self-start rounded-md border border-line bg-surface p-5 shadow-clean transition duration-200 hover:-translate-y-1 hover:border-accent/50 sm:p-6;
+  }
+
+  .ai-feature-icon {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-sm border border-accent/45 bg-ink text-accent;
+  }
+
+  .project-card {
+    @apply flex h-full flex-col overflow-hidden rounded-sm border border-line bg-surface shadow-clean transition duration-200 hover:-translate-y-1 hover:border-accent/55;
+  }
+
+  .project-card::before {
+    content: '';
+    @apply block h-1 w-full bg-accent;
+  }
+
+  .project-thumb {
+    @apply relative m-4 mb-0 block aspect-video overflow-hidden rounded-sm border border-line bg-ink;
+  }
+
+  .project-thumb img {
+    @apply p-2;
+  }
+
+  .project-card-content {
+    @apply flex flex-1 flex-col p-5 pt-4;
+  }
+
+  .project-card-actions {
+    @apply mt-auto grid grid-cols-2 gap-3 pt-6;
+  }
+
+  .contact-row {
+    @apply flex items-center gap-4 border border-line bg-surface p-4 transition hover:border-accent/55;
+  }
+
+  .form-field {
+    @apply grid gap-2;
+  }
+
+  .form-field span {
+    @apply text-sm font-bold text-text;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    @apply w-full border border-line bg-ink px-4 py-3 text-base text-text outline-none transition placeholder:text-muted/55 focus:border-accent;
+  }
+}

@@ -1,0 +1,10 @@
+⨯ [TypeError: fetch failed] {
+  [cause]: Error: connect EACCES 104.18.38.236:443
+      at <unknown> (Error: connect EACCES 104.18.38.236:443) {
+    errno: -4092,
+    code: 'EACCES',
+    syscall: 'connect',
+    address: '104.18.38.236',
+    port: 443
+  }
+}
