@@ -58,10 +58,17 @@ export function Hero() {
               <FiCode aria-hidden="true" />
               View Projects
             </Link>
-            <Link href="/resume" className="btn-secondary focus-ring">
+            <a
+              href="/resume/muhammad-sufiyan-resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              aria-label="Download Muhammad Sufiyan resume PDF"
+              className="btn-secondary focus-ring"
+            >
               <FiDownload aria-hidden="true" />
               Download Resume
-            </Link>
+            </a>
             <Link href="/contact" className="btn-secondary focus-ring">
               <FiMail aria-hidden="true" />
               Contact Me
