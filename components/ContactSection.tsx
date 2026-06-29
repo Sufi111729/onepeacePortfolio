@@ -53,7 +53,7 @@ export function ContactSection() {
         <div className="self-start">
           <p className="max-w-2xl text-base leading-8 text-muted sm:text-lg">
             I am open to Full Stack Developer opportunities, Java Spring Boot applications, React websites, API
-            development, prompt-based AI web features, AI API integrations, internships, and freelance collaborations.
+            development, practical AI-powered web features, internships, and freelance collaborations.
           </p>
           <div className="mt-8 grid gap-4">
             {contacts.map((item) => {

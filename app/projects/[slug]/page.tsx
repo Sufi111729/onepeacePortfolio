@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import { JsonLd } from '@/components/JsonLd';
@@ -67,6 +68,14 @@ export default async function ProjectDetailPage({ params }: Props) {
         <p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-accent">{project.category} Project</p>
         <h1 className="font-display text-5xl uppercase leading-none text-text sm:text-6xl">{project.name}</h1>
         <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">{project.tagline}</p>
+        <div className="mt-7 flex flex-wrap gap-3">
+          <Link href="/projects" className="btn-secondary focus-ring">
+            Explore projects by Muhammad Sufiyan
+          </Link>
+          <Link href="/contact" className="btn-secondary focus-ring">
+            Contact Muhammad Sufiyan
+          </Link>
+        </div>
 
         <div className="mt-10 overflow-hidden border border-line bg-surface shadow-clean">
           <Image src={project.image} alt={project.imageAlt} width={1280} height={720} sizes="100vw" className="h-auto w-full" priority />

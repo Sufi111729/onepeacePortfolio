@@ -39,24 +39,27 @@ export function Hero() {
           transition={{ duration: 0.65, ease: 'easeOut' }}
           className="max-w-3xl"
         >
-          <p className="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-accent">Muhammad Sufiyan</p>
+          <p className="mb-4 text-sm font-bold uppercase tracking-[0.24em] text-accent">Java Full Stack Developer</p>
           <h1 className="hero-title font-display text-5xl uppercase leading-[0.96] text-text sm:text-6xl lg:text-7xl">
-            <span className="block">Full Stack</span>
-            <span className="block">Developer</span>
-            <span className="block text-accent">AI Web Apps</span>
+            <span className="block">Muhammad Sufiyan &ndash;</span>
+            <span className="block text-accent">Java Full Stack Developer</span>
           </h1>
+          <p className="mt-6 max-w-2xl text-base leading-8 text-muted sm:text-lg">
+            Muhammad Sufiyan is a Java Full Stack Developer specializing in Java, Spring Boot, React, REST APIs, MySQL,
+            and modern web applications.
+          </p>
           <h2 className="mt-6 max-w-2xl border-l-2 border-accent pl-4 text-lg font-bold uppercase leading-7 tracking-[0.1em] text-text sm:text-xl">
             Building scalable Java, React, and prompt-based AI web applications
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-muted sm:text-lg">
-            I am Muhammad Sufiyan, a Full Stack Developer focused on Java, Spring Boot, React, REST APIs, databases,
-            responsive interfaces, and practical AI API features for useful web applications.
+            I build responsive interfaces, Spring Boot backend systems, REST API integrations, and database-driven
+            features for practical web applications.
           </p>
 
           <div className="mt-9 grid gap-3 sm:flex sm:flex-wrap">
             <Link href="/projects" className="btn-primary focus-ring">
               <FiCode aria-hidden="true" />
-              View Projects
+              View projects by Muhammad Sufiyan
             </Link>
             <a
               href="/resume/muhammad-sufiyan-resume.pdf"
@@ -71,7 +74,7 @@ export function Hero() {
             </a>
             <Link href="/contact" className="btn-secondary focus-ring">
               <FiMail aria-hidden="true" />
-              Contact Me
+              Contact Muhammad Sufiyan
             </Link>
           </div>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { ContactSection } from '@/components/ContactSection';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMetadata } from '@/data/site';
@@ -15,9 +16,17 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl">
           <h1 className="font-display text-5xl uppercase leading-none text-text sm:text-6xl">Contact Muhammad Sufiyan</h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">
-            Contact me for Full Stack development, Java Spring Boot applications, React websites, API development, AI
-            prompt-based AI features, AI API integrations, and practical AI web application ideas.
+            Use the public contact options on this portfolio to reach Muhammad Sufiyan about Java Full Stack
+            development, Spring Boot applications, React websites, API development, and practical web application ideas.
           </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link href="/projects" className="btn-secondary focus-ring">
+              View projects by Muhammad Sufiyan
+            </Link>
+            <Link href="/about" className="btn-secondary focus-ring">
+              Learn more about Muhammad Sufiyan
+            </Link>
+          </div>
         </div>
       </section>
       <ContactSection />

@@ -9,12 +9,18 @@ import { SkillsSection } from '@/components/SkillsSection';
 import { site } from '@/data/site';
 import { createMetadata, webPageSchema } from '@/lib/seo';
 
-export const metadata: Metadata = createMetadata({
-  title: 'Muhammad Sufiyan | Full Stack Developer & AI Web Application Developer',
-  description:
-    'Muhammad Sufiyan is a Full Stack Developer building scalable web applications, Java Spring Boot backends, React interfaces, REST APIs, database-driven systems, and prompt-based AI web application features.',
+const homeMetadata = createMetadata({
+  title: site.title,
+  description: site.description,
   path: '/',
 });
+
+export const metadata: Metadata = {
+  ...homeMetadata,
+  title: {
+    absolute: site.title,
+  },
+};
 
 export default function HomePage() {
   return (

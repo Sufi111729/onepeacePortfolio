@@ -9,7 +9,7 @@ export function createMetadata({
   title,
   description,
   path = '/',
-  image = '/opengraph-image',
+  image = site.ogImage,
 }: {
   title: string;
   description: string;
@@ -20,6 +20,7 @@ export function createMetadata({
   return {
     title,
     description,
+    keywords: site.keywords,
     alternates: { canonical: url },
     robots: { index: true, follow: true },
     openGraph: {
@@ -28,12 +29,13 @@ export function createMetadata({
       url,
       siteName: 'Muhammad Sufiyan Portfolio',
       type: 'website',
-      images: [{ url: absoluteUrl(image), width: 1200, height: 630, alt: `${site.name} portfolio preview` }],
+      images: [{ url: absoluteUrl(image), width: 1200, height: 630, alt: site.ogImageAlt }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      creator: '@Sufi111729',
       images: [absoluteUrl(image)],
     },
   };
@@ -42,26 +44,29 @@ export function createMetadata({
 export const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': `${site.url}/#person`,
   name: 'Muhammad Sufiyan',
+  alternateName: ['Md Sufi', 'Sufi111729'],
   url: `${site.url}/`,
-  jobTitle: 'Full Stack Developer and AI Web Application Developer',
+  jobTitle: 'Java Full Stack Developer',
   description:
-    'Full Stack Developer specializing in Java, Spring Boot, React, REST APIs, database-driven applications, prompt-based AI web features, and practical AI API integration.',
+    'Java Full Stack Developer in India specializing in Java, Spring Boot, React, REST APIs, MySQL, responsive web applications, and practical AI-powered features.',
+  email: site.email,
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'IN',
+  },
   sameAs: ['https://github.com/Sufi111729'],
   knowsAbout: [
     'Java',
     'Spring Boot',
     'React',
+    'TypeScript',
     'JavaScript',
-    'SQL',
     'REST APIs',
+    'MySQL',
     'Full Stack Development',
-    'Artificial Intelligence',
-    'AI APIs',
-    'Prompt Engineering Basics',
-    'AI Web Applications',
-    'AI Chat Interfaces',
-    'Document Processing Basics',
+    'Web Development',
   ],
 };
 
