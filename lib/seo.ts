@@ -43,7 +43,7 @@ export const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Muhammad Sufiyan',
-  url: 'https://mdsufidev.vercel.app/',
+  url: `${site.url}/`,
   jobTitle: 'Full Stack Developer and AI Web Application Developer',
   description:
     'Full Stack Developer specializing in Java, Spring Boot, React, REST APIs, database-driven applications, prompt-based AI web features, and practical AI API integration.',

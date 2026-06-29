@@ -4,7 +4,7 @@ export const site = {
   title: 'Muhammad Sufiyan | Full Stack Developer & AI Web Application Developer',
   description:
     'Muhammad Sufiyan is a Full Stack Developer building scalable web applications, Java Spring Boot backends, React interfaces, REST APIs, database-driven systems, and prompt-based AI web application features.',
-  url: 'https://mdsufidev.vercel.app',
+  url: 'https://muhammadsufiyan.filewalatool.com',
   github: 'https://github.com/Sufi111729',
   email: 'sufi111729@gmail.com',
   location: 'India',
