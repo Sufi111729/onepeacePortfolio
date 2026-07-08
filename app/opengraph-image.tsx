@@ -28,10 +28,10 @@ export default function OpenGraphImage() {
           Muhammad Sufiyan
         </div>
         <div style={{ marginTop: 28, fontSize: 72, fontWeight: 900, lineHeight: 1.05 }}>
-          Full Stack Developer
+          Java Full Stack Developer
         </div>
         <div style={{ fontSize: 66, fontWeight: 900, lineHeight: 1.05, color: '#E11D2E' }}>
-          AI Web App Developer
+          Web & Software Engineer
         </div>
         <div style={{ marginTop: 38, display: 'flex', gap: 18, fontSize: 30, color: '#A1A1AA' }}>
           <span>Java</span>
@@ -40,7 +40,7 @@ export default function OpenGraphImage() {
           <span>|</span>
           <span>React</span>
           <span>|</span>
-          <span>AI APIs</span>
+          <span>SQL</span>
         </div>
       </div>
     ),

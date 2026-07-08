@@ -22,8 +22,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Muhammad Sufiyan | Java Full Stack Developer',
-    description:
-      'Java Full Stack Developer specializing in Java, Spring Boot, React, REST APIs, MySQL, and modern web applications.',
+    description: site.description,
     url: '/',
     siteName: 'Muhammad Sufiyan Portfolio',
     type: 'website',
@@ -39,8 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Muhammad Sufiyan | Java Full Stack Developer',
-    description:
-      'Java Full Stack Developer specializing in Java, Spring Boot, React, REST APIs, MySQL, and modern web applications.',
+    description: site.description,
     images: [site.ogImage],
   },
   icons: {

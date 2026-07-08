@@ -15,8 +15,8 @@ export default function ResumePage() {
       <section className="mx-auto max-w-7xl">
         <h1 className="font-display text-5xl uppercase leading-none text-text sm:text-6xl">Muhammad Sufiyan Resume</h1>
         <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">
-          Resume for a Full Stack Developer & AI Web Application Developer skilled in Java, Spring Boot, React, REST
-          APIs, SQL, AI API integrations, and prompt-based web application features.
+          Resume for a Java Full Stack Developer skilled in Java, Spring Boot, React, REST APIs, SQL, JavaScript, and
+          web application development.
         </p>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
           <a href={`mailto:${site.email}?subject=Resume request for Muhammad Sufiyan`} className="btn-primary focus-ring">
@@ -35,8 +35,8 @@ export default function ResumePage() {
         <article className="mt-10 border border-line bg-surface p-6 shadow-clean">
           <h2 className="text-2xl font-bold text-text">Professional Focus</h2>
           <p className="mt-4 leading-8 text-muted">
-            Java Full Stack Developer building scalable web applications and practical AI-assisted features for recruiters,
-            startups, software teams, and freelance clients.
+            Java Full Stack Developer building maintainable web applications for recruiters, startups, software teams,
+            and freelance clients.
           </p>
         </article>
       </section>

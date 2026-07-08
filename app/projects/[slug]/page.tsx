@@ -70,10 +70,10 @@ export default async function ProjectDetailPage({ params }: Props) {
         <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">{project.tagline}</p>
         <div className="mt-7 flex flex-wrap gap-3">
           <Link href="/projects" className="btn-secondary focus-ring">
-            Explore projects by Muhammad Sufiyan
+            Explore Projects
           </Link>
           <Link href="/contact" className="btn-secondary focus-ring">
-            Contact Muhammad Sufiyan
+            Contact Me
           </Link>
         </div>
 

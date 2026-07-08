@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AboutSection } from '@/components/AboutSection';
-import { AiWebAppSection } from '@/components/AiWebAppSection';
 import { JsonLd } from '@/components/JsonLd';
 import { pageMetadata, site } from '@/data/site';
 import { breadcrumbSchema, createMetadata, webPageSchema } from '@/lib/seo';
@@ -18,20 +17,19 @@ export default function AboutPage() {
           <h1 className="font-display text-5xl uppercase leading-none text-text sm:text-6xl">About Muhammad Sufiyan</h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">
             Java Full Stack Developer in India building Spring Boot backends, React interfaces, REST APIs, database
-            applications, responsive web experiences, and practical AI-powered features.
+            applications, and responsive web experiences.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/" className="btn-secondary focus-ring">
-              Visit the Muhammad Sufiyan portfolio homepage
+              Visit Homepage
             </Link>
             <a href={site.github} target="_blank" rel="noopener noreferrer" className="btn-secondary focus-ring">
-              View Sufi111729 on GitHub
+              View GitHub
             </a>
           </div>
         </div>
       </section>
       <AboutSection />
-      <AiWebAppSection />
     </main>
   );
 }

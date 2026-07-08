@@ -21,10 +21,10 @@ export default function ContactPage() {
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/projects" className="btn-secondary focus-ring">
-              View projects by Muhammad Sufiyan
+              View Projects
             </Link>
             <Link href="/about" className="btn-secondary focus-ring">
-              Learn more about Muhammad Sufiyan
+              Learn More
             </Link>
           </div>
         </div>

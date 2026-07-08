@@ -13,28 +13,13 @@ export const coreSkillGroups = [
   },
 ];
 
-export const aiSkillGroups = [
+export const additionalSkillGroups = [
   {
-    title: 'AI Integration',
-    skills: ['AI APIs', 'Prompt Engineering Basics', 'API Integration', 'Prompt-Based Web Apps'],
+    title: 'Development Workflow',
+    skills: ['API Integration', 'Form Handling', 'Component-Based UI', 'Deployment Workflow'],
   },
   {
-    title: 'AI Application Workflows',
-    skills: [
-      'AI Chat Interfaces',
-      'AI Form Workflows',
-      'Document Upload Interfaces',
-      'AI Document Processing Basics',
-      'Automation Workflow Planning',
-      'AI Feature Planning',
-    ],
+    title: 'Application Basics',
+    skills: ['Authentication Basics', 'CRUD Features', 'Document Upload Interfaces', 'Database-Driven Pages'],
   },
-];
-
-export const aiWebAppCards = [
-  'Prompt-Based AI Features',
-  'AI Chat Interfaces',
-  'AI API Integration',
-  'Document Upload Interfaces',
-  'AI-Powered Web Applications',
 ];

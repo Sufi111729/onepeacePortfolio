@@ -38,7 +38,7 @@ export function ProjectCard({ project, priority = false }: { project: Project; p
 
         <div className="project-card-actions">
           <a
-            href={project.github ?? 'https://github.com/Sufi111729'}
+            href={project.github ?? 'https://github.com/mdsufidev'}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-small focus-ring"

@@ -21,10 +21,10 @@ export default function ProjectsPage() {
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/about" className="btn-secondary focus-ring">
-              Learn more about Muhammad Sufiyan
+              Learn More
             </Link>
             <Link href="/contact" className="btn-secondary focus-ring">
-              Contact Muhammad Sufiyan
+              Contact Me
             </Link>
           </div>
         </div>

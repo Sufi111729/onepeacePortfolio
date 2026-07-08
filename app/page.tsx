@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { AboutSection } from '@/components/AboutSection';
-import { AiWebAppSection } from '@/components/AiWebAppSection';
 import { ContactSection } from '@/components/ContactSection';
 import { Hero } from '@/components/Hero';
 import { JsonLd } from '@/components/JsonLd';
@@ -30,7 +29,6 @@ export default function HomePage() {
       <AboutSection compact />
       <SkillsSection />
       <ProjectsSection />
-      <AiWebAppSection />
       <ContactSection />
     </main>
   );

@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Muhammad Sufiyan Portfolio',
     short_name: 'Md Sufi Dev',
-    description: 'Full Stack Developer & AI Web Application Developer portfolio.',
+    description: 'Java Full Stack Developer portfolio.',
     start_url: '/',
     display: 'standalone',
     background_color: '#070707',

@@ -1,14 +1,18 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
-import { FiGithub, FiMail, FiMapPin, FiSend } from 'react-icons/fi';
+import { FiFacebook, FiGithub, FiInstagram, FiLinkedin, FiMail, FiMapPin, FiPhone, FiSend } from 'react-icons/fi';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { site } from '@/data/site';
 import { supabase } from '@/lib/supabase';
 
 const contacts = [
   { icon: FiMail, label: 'Email', value: site.email, href: `mailto:${site.email}` },
-  { icon: FiGithub, label: 'GitHub', value: 'github.com/Sufi111729', href: site.github },
+  { icon: FiPhone, label: 'Mobile', value: site.phone, href: site.phoneHref },
+  { icon: FiGithub, label: 'GitHub', value: 'github.com/mdsufidev', href: site.github },
+  { icon: FiLinkedin, label: 'LinkedIn', value: 'linkedin.com/in/mdsufidev', href: site.linkedin },
+  { icon: FiInstagram, label: 'Instagram', value: 'mdsufidev', href: site.instagram },
+  { icon: FiFacebook, label: 'Facebook', value: 'mdsufidev', href: site.facebook },
   { icon: FiMapPin, label: 'Location', value: site.localLocation },
 ];
 
@@ -53,7 +57,7 @@ export function ContactSection() {
         <div className="self-start">
           <p className="max-w-2xl text-base leading-8 text-muted sm:text-lg">
             I am open to Full Stack Developer opportunities, Java Spring Boot applications, React websites, API
-            development, practical AI-powered web features, internships, and freelance collaborations.
+            development, internships, and freelance collaborations.
           </p>
           <div className="mt-8 grid gap-4">
             {contacts.map((item) => {

@@ -10,7 +10,7 @@ export type Project = {
   imageAlt: string;
   github?: string;
   live?: string;
-  category: 'Full Stack' | 'Frontend' | 'AI Tool' | 'Utility';
+  category: 'Full Stack' | 'Frontend' | 'Utility';
   softwareApplication?: boolean;
 };
 
@@ -26,9 +26,9 @@ export const projects: Project[] = [
     technologies: ['React', 'Vite', 'Tailwind CSS', 'JavaScript', 'Document Tools'],
     features: ['PDF merge, split, and compression flows', 'Image compression and resizing', 'Image to PDF and PDF to JPG utilities', 'Passport photo and background removal tools'],
     image: '/projects/filewalatool-pdf-image-tools-project.webp',
-    imageAlt: 'FileWalaTool AI-ready PDF and image tools web application by Muhammad Sufiyan',
+    imageAlt: 'FileWalaTool PDF and image tools web application',
     live: 'https://www.filewalatool.com/',
-    github: 'https://github.com/Sufi111729',
+    github: 'https://github.com/mdsufidev',
     category: 'Utility',
     softwareApplication: true,
   },
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     features: ['Responsive manga catalog interface', 'Chapter reading experience', 'Backend-based content management', 'Database-driven application structure'],
     image: '/projects/mangalok-manga-reading-web-app.webp',
     imageAlt: 'MangaLok React and Spring Boot manga reading web application project',
-    github: 'https://github.com/Sufi111729',
+    github: 'https://github.com/mdsufidev',
     category: 'Full Stack',
   },
   {
@@ -58,8 +58,8 @@ export const projects: Project[] = [
     technologies: ['React', 'JavaScript', 'PDF Export', 'Responsive Design'],
     features: ['ATS-friendly resume sections', 'Clean form-based editing', 'Downloadable resume output', 'Responsive React interface'],
     image: '/projects/resume-builder-react-project.webp',
-    imageAlt: 'ATS-friendly React resume builder project by Muhammad Sufiyan',
-    github: 'https://github.com/Sufi111729',
+    imageAlt: 'React resume builder project with ATS-friendly sections',
+    github: 'https://github.com/mdsufidev',
     category: 'Frontend',
   },
 ];

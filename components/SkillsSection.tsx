@@ -1,5 +1,5 @@
-import { FiCpu, FiDatabase, FiLayout, FiTool } from 'react-icons/fi';
-import { aiSkillGroups, coreSkillGroups } from '@/data/skills';
+import { FiDatabase, FiLayout, FiTool } from 'react-icons/fi';
+import { additionalSkillGroups, coreSkillGroups } from '@/data/skills';
 
 const coreIcons = [FiLayout, FiDatabase, FiTool];
 
@@ -10,11 +10,11 @@ export function SkillsSection() {
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent">Technical Toolkit</p>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-text sm:text-4xl lg:text-5xl">
-            Java Full Stack <span className="text-accent">&amp;</span> AI Web App Skills
+            Java Full Stack <span className="text-accent">&amp;</span> Web Development Skills
           </h2>
           <p className="mt-5 text-base leading-8 text-muted sm:text-lg">
-            Core Java full stack development skills, supported by practical AI web app foundations for prompt-based
-            features and API-driven application workflows.
+            Core skills for Java backend work, React frontend interfaces, REST API integration, SQL databases, and
+            production-ready web application workflows.
           </p>
         </div>
 
@@ -43,21 +43,21 @@ export function SkillsSection() {
         <article className="skill-ai-panel">
           <div className="grid items-start gap-6 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
-              <span className="skill-ai-badge">Building & Learning</span>
+              <span className="skill-ai-badge">Project Workflow</span>
               <div className="mt-4 flex items-center gap-3">
                 <span className="skill-icon-box">
-                  <FiCpu aria-hidden="true" size={21} />
+                  <FiTool aria-hidden="true" size={21} />
                 </span>
-                <h3 className="text-2xl font-bold tracking-tight text-text">AI Web Apps & Agentic AI Foundations</h3>
+                <h3 className="text-2xl font-bold tracking-tight text-text">Full Stack Application Workflow</h3>
               </div>
               <p className="mt-5 text-base leading-8 text-muted">
-                Building AI-powered web experiences with API integrations, prompt-based workflows, document processing
-                interfaces, and automation-oriented application features.
+                Building maintainable application features from UI components and forms to backend APIs, database
+                models, deployment, and project documentation.
               </p>
             </div>
 
             <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-              {aiSkillGroups.map((group) => (
+              {additionalSkillGroups.map((group) => (
                 <div key={group.title} className="skill-ai-group">
                   <h4 className="text-sm font-bold uppercase tracking-[0.16em] text-accent">{group.title}</h4>
                   <div className="mt-4 grid gap-2.5">

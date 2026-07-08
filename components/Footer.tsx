@@ -1,17 +1,19 @@
 import Link from 'next/link';
-import { FiGithub, FiMail } from 'react-icons/fi';
+import { FiFacebook, FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi';
 import { site } from '@/data/site';
 
 const socials = [
-  { icon: FiGithub, label: 'GitHub profile for Muhammad Sufiyan', href: site.github },
-  { icon: FiMail, label: 'Email Muhammad Sufiyan', href: `mailto:${site.email}` },
+  { icon: FiGithub, label: 'GitHub: mdsufidev', href: site.github },
+  { icon: FiLinkedin, label: 'LinkedIn: mdsufidev', href: site.linkedin },
+  { icon: FiInstagram, label: 'Instagram: mdsufidev', href: site.instagram },
+  { icon: FiFacebook, label: 'Facebook: mdsufidev', href: site.facebook },
 ];
 
 export function Footer() {
   return (
     <footer className="border-t border-line bg-[#050505] px-5 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-center sm:flex-row sm:text-left">
-        <p className="text-sm text-muted">&copy; 2026 Muhammad Sufiyan. Built with clean code.</p>
+        <p className="text-sm text-muted">&copy; 2026 Muhammad Sufiyan / mdsufidev. All rights reserved.</p>
         <nav className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted" aria-label="Footer navigation">
           <Link href="/privacy-policy" className="hover:text-accent focus-ring">
             Privacy Policy

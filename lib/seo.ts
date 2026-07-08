@@ -35,7 +35,7 @@ export function createMetadata({
       card: 'summary_large_image',
       title,
       description,
-      creator: '@Sufi111729',
+      creator: '@mdsufidev',
       images: [absoluteUrl(image)],
     },
   };
@@ -46,17 +46,18 @@ export const personSchema = {
   '@type': 'Person',
   '@id': `${site.url}/#person`,
   name: 'Muhammad Sufiyan',
-  alternateName: ['Md Sufi', 'Sufi111729'],
+  alternateName: ['mdsufidev', 'MD Sufi Developer'],
   url: `${site.url}/`,
   jobTitle: 'Java Full Stack Developer',
   description:
-    'Java Full Stack Developer in India specializing in Java, Spring Boot, React, REST APIs, MySQL, responsive web applications, and practical AI-powered features.',
+    'Java Full Stack Developer building web applications with Java, Spring Boot, React, SQL, JavaScript, REST APIs, and modern web technologies.',
   email: site.email,
+  telephone: site.phone,
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'IN',
   },
-  sameAs: ['https://github.com/Sufi111729'],
+  sameAs: [site.github, site.linkedin, site.instagram, site.facebook],
   knowsAbout: [
     'Java',
     'Spring Boot',

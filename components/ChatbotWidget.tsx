@@ -7,17 +7,15 @@ import { site } from '@/data/site';
 const quickPrompts = [
   {
     label: 'Skills',
-    answer:
-      'Muhammad Sufiyan works with Java, Spring Boot, React, JavaScript, REST APIs, SQL, Git, GitHub, Postman, Vercel, and prompt-based AI web app features.',
+    message: 'What skills does Muhammad Sufiyan have?',
   },
   {
     label: 'Projects',
-    answer:
-      'Featured projects include FileWalaTool, MangaLok, and Resume Builder. You can view project details from the Projects section.',
+    message: 'What projects has Muhammad Sufiyan built?',
   },
   {
     label: 'Contact',
-    answer: `You can contact Muhammad Sufiyan at ${site.email} or use the contact form on this portfolio.`,
+    message: 'How can I contact Muhammad Sufiyan?',
   },
 ];
 
@@ -37,9 +35,8 @@ export function ChatbotWidget() {
     },
   ]);
 
-  async function submitMessage(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const trimmed = message.trim();
+  async function sendMessage(text: string) {
+    const trimmed = text.trim();
     if (!trimmed || loading) return;
 
     setMessages((current) => [...current, { role: 'user', text: trimmed }]);
@@ -75,8 +72,13 @@ export function ChatbotWidget() {
     }
   }
 
-  function handleQuickPrompt(answer: string) {
-    setMessages((current) => [...current, { role: 'bot', text: answer }]);
+  async function submitMessage(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    await sendMessage(message);
+  }
+
+  function handleQuickPrompt(prompt: string) {
+    void sendMessage(prompt);
   }
 
   return (
@@ -130,7 +132,8 @@ export function ChatbotWidget() {
                   key={prompt.label}
                   type="button"
                   className="border border-line bg-ink px-3 py-1.5 text-xs font-semibold text-muted transition hover:border-accent/50 hover:text-text focus-ring"
-                  onClick={() => handleQuickPrompt(prompt.answer)}
+                  onClick={() => handleQuickPrompt(prompt.message)}
+                  disabled={loading}
                 >
                   {prompt.label}
                 </button>
